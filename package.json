@@ -11,5 +11,14 @@
   "description": "",
   "devDependencies": {
     "cypress": "^14.5.0"
+  },
+  {
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "commonjs",
+      "baseUrl": "./",
+      "types": ["cypress"]
+    },
+    "include": ["cypress/**/*.js"]
   }
 }
