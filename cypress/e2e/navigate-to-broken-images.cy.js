@@ -11,7 +11,7 @@ describe('Navigate to broken images page',()=>{
         cy.get('img').each((img)=>{
             const imgUrl = img.prop('src')
             cy.request(imgUrl).then((response)=>{
-                expect(response.status, `Status pentru ${imgUrl}`).to.eq(200)
+                expect(response.status, `Status for ${imgUrl}`).to.eq(200)
             })
         })
         
