@@ -48,11 +48,9 @@ describe("Create tests for dynaimic content page",()=>{
             cy.get('#content > :nth-child(7) > .large-10').invoke("text").then((text3) => {
               initialTextList.push(text3);
       
-              // Click pe link de 2 ori
               cy.get(':nth-child(3) > a').click();
               cy.get(':nth-child(3) > a').click();
       
-              // După ce textul se actualizează, extragem din nou
               cy.get(':nth-child(1) > .large-10').invoke("text").then((newText1) => {
                 affectedTextList.push(newText1);
       
@@ -62,7 +60,6 @@ describe("Create tests for dynaimic content page",()=>{
                   cy.get('#content > :nth-child(7) > .large-10').invoke("text").then((newText3) => {
                     affectedTextList.push(newText3);
       
-                    // Comparația finală
                     expect(initialTextList).to.not.deep.equal(affectedTextList);
                   });
                 });
